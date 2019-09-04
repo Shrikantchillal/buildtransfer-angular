@@ -1,0 +1,40 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let build of temp2 | keyvalue; let i = index">
+    <mat-expansion-panel-header >
+      <mat-panel-title>
+        {{build.value.region.region_description}}
+      </mat-panel-title>
+      <mat-panel-description>
+        
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>BUILDS</th>
+          <th >Status</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let n of build.value.builds; index as i; trackBy: trackByFn">
+          <td>
+            <span class="bold-font">{{n.build}}</span> ({{n.build_timestamp | date:'medium'}})
+          </td>
+          <td>
+            <!-- build_size == {{n.build_size}} total_size == {{n.total_size}} {{(n.build_size/n.total_size)*100 }} -->
+            {{n.status}}
+          </td>  
+          <td>
+
+          </td>
+          <!-- <td><button type="button" ng-class="{'disabled': (n.status ==='incomplete' || n.status ==='outOfsync' || n.pushhost_sync_in_progress) }" ng-disabled="(n.status ==='incomplete' || n.status ==='outOfsync' || n.pushhost_sync_in_progress)" class="btn btn-info btn-xs" style="font-size:10px;" ng-click="pushToNFS($event);" id="{{n.id}}">Push To NFS</button></td> -->
+          <td>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-expansion-panel>
+</mat-accordion>

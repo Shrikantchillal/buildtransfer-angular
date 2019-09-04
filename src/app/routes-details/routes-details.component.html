@@ -1,0 +1,36 @@
+<h2>Primary Data route table</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Data Route</th>
+      <th>Servers</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let active of activeData">
+      <td>{{active.master_location}} to {{active.slave_location}}</td>
+      <td>{{active.master}} to {{active.slave}}</td>
+      <td>{{active.status}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Secondary Data route table</h2>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Data Route</th>
+        <th>Servers</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let active of passiveData">
+        <td>{{active.master_location}} to {{active.slave_location}}</td>
+        <td>{{active.master}} to {{active.slave}}</td>
+        <td>{{active.status}}</td>
+      </tr>
+    </tbody>
+  </table>
